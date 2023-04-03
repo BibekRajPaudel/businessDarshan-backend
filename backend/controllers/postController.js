@@ -53,7 +53,7 @@ const addPost = catchAsyncErrors(async (req, res, next) => {
 
 //Search according to the category - news/business
 const getNewsCategory = catchAsyncErrors(async (req, res, next) => {
-  const post = await Post.find({ category: { $in: [req.params.id] } });
+  const post = await Post.find({ category: { $in: [req.params.id] } }).sort({ createdAt: -1 });
 
   res.status(201).json({
     message: "Post displayed successfully",
