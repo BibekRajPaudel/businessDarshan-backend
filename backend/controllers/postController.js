@@ -75,7 +75,7 @@ const getNewsTags = catchAsyncErrors(async (req, res, next) => {
 
 //Search according to the category -> bank-market/banking
 const getBankCategory = catchAsyncErrors(async (req, res, next) => {
-  const post = await Post.find({ category: { $in: [req.params.id] } });
+  const post = await Post.find({ category: { $in: [req.params.id] } }).sort({ createdAt: -1 });
 
   res.status(201).json({
     message: "Post displayed successfully",
@@ -86,7 +86,7 @@ const getBankCategory = catchAsyncErrors(async (req, res, next) => {
 
 //Search according to the category -> bank-market/banking
 const getPhilosophyCategory = catchAsyncErrors(async (req, res, next) => {
-  const post = await Post.find({ category: { $in: [req.params.id] } });
+  const post = await Post.find({ category: { $in: [req.params.id] } }).sort({ createdAt: -1 });
 
   res.status(201).json({
     message: "Post displayed successfully",
@@ -96,7 +96,7 @@ const getPhilosophyCategory = catchAsyncErrors(async (req, res, next) => {
 
 //Search according to the category -> bank-market/banking
 const getStartUpCategory = catchAsyncErrors(async (req, res, next) => {
-  const post = await Post.find({ category: { $in: [req.params.id] } });
+  const post = await Post.find({ category: { $in: [req.params.id] } }).sort({ createdAt: -1 });
 
   res.status(201).json({
     message: "Post displayed successfully",
@@ -106,7 +106,7 @@ const getStartUpCategory = catchAsyncErrors(async (req, res, next) => {
 
 //Search according to the category -> bank-market/banking
 const getAdditionalCategory =  catchAsyncErrors(async (req, res, next) => {
-  const post = await Post.find({ category: { $in: [req.params.id] } });
+  const post = await Post.find({ category: { $in: [req.params.id] } }).sort({ createdAt: -1 });
 
   res.status(201).json({
     message: "Post displayed successfully",
